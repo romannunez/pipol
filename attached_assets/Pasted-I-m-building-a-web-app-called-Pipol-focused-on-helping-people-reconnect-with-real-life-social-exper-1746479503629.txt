@@ -1,0 +1,138 @@
+I'm building a web app called Pipol, focused on helping people reconnect with real-life social experiences through map-based event discovery and creation.
+
+🌍 Purpose of the App:
+The mission is to bring people back into meaningful real-world interactions. Pipol lets users:
+
+Discover nearby in-person events (created by others)
+
+Create events by choosing a location on a map
+
+Join events and meet people with similar interests
+
+Experience real life, not just virtual interactions
+
+Think of it like a combination of Google Maps + Meetup + Pokémon Go, but the entire experience revolves around the interactive map and community-driven events.
+
+🧱 Core Features (already planned/in development):
+1. User Authentication
+Users can sign up and log in using email (optionally with social login later).
+
+Once logged in, users can:
+
+Create events
+
+Join events
+
+View their created and joined events
+
+2. Map View (Core UI)
+Show current user location on the map
+
+Load and display events from the database as pins/markers
+
+Clicking a pin opens a detail popup/modal with:
+
+Title
+
+Description
+
+Time/date
+
+Price (if any)
+
+Button to Join (or Pay + Join)
+
+Map should support creating new events by tapping/long-pressing on a location
+
+3. Create Event Flow
+When a user selects a place on the map or taps “Create Event”:
+
+A form is shown to enter:
+
+Title
+
+Description
+
+Category (optional)
+
+Date/time
+
+Price (optional, can be $0)
+
+When submitted, the event is saved to the database with user ID and location
+
+4. Join Event Flow
+If the event is free, users can join directly
+
+If the event has a price, integrate Stripe to process payment
+
+After payment, user is added to the attendees list
+
+5. My Events
+Show list of:
+
+Events user created
+
+Events user has joined
+
+6. Admin/Moderation (future)
+Events may need moderation or report/flag system (optional, not urgent)
+
+🛠️ Tech Stack:
+Frontend: React or React Native (depending on mobile/web)
+
+Map: Leaflet.js (preferred) or Mapbox
+
+Backend: Node.js with Express.js (or Firebase Functions)
+
+Database: Supabase (preferred) or Firebase Firestore
+
+Auth: Supabase Auth (email/password)
+
+Payments: Stripe
+
+🚧 What I need help with now:
+Please help build or improve the following parts of the app:
+
+✅ Map Functionality:
+Load current location
+
+Fetch nearby events from Supabase and show as map markers
+
+On marker click: show event info (popup/modal)
+
+✅ Event Creation:
+On map click: open event form modal with selected coordinates prefilled
+
+Save event to Supabase with form data + location
+
+✅ Event Join Flow:
+If event has price > 0, trigger Stripe checkout before confirming join
+
+Else, allow direct join (store user ID in attendees list)
+
+✅ Event Details Component:
+Show full event info
+
+Button to Join / Pay & Join
+
+Show number of attendees
+
+✅ My Events Page:
+Query and display events user has created or joined
+
+Optional: Add categories or filters on the map (e.g. sports, music, business).
+
+Organize files clearly, use functional components, and add comments where needed.
+
+This version ensures Replit AI understands:
+
+You’ve started the app and want to continue development
+
+You’re using a real-time map interface
+
+You have a backend and database preference
+
+You need full event creation, discovery, and joining logic
+
+Stripe integration is required for paid events

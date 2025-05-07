@@ -1,0 +1,29 @@
+Error en búsqueda de lugares: 
+SyntaxError {}
+
+Google Places results: 
+Array []
+No se encontraron resultados con Google Places, usando MapBox como fallback
+Usando ubicación actual para mejorar resultados de búsqueda
+Realizando búsqueda en Google Places: /api/google-proxy/place/textsearch/json?query=parque&location=-31.4124372,-64.1507427&radius=50000&key=AIzaSyCy5iYWFh36MvrxPKr58A7TPd-f6YHtT1I
+Error en búsqueda de lugares: 
+SyntaxError {}
+
+Google Places results: 
+Array []
+No se encontraron resultados con Google Places, usando MapBox como fallback
+Geocode results: 
+Object {mapboxAddress: "Doctor Facundo Zuviría 1299, Córdoba, Córdoba, X5004, Argentina", googleAddress: "Dirección no encontrada"}
+Usando dirección de MapBox (fallback): Doctor Facundo Zuviría 1299, Córdoba, Córdoba, X5004, Argentina
+Guardando datos de ubicación: 
+Object {latitude: -31.420202381903614, longitude: -64.16673389481184, locationAddress: "Doctor Facundo Zuviría 1299, Córdoba, Córdoba, X5004, Argentina", locationName: "Doctor Facundo Zuviría 1299"}
+Confirmando ubicación original (Mapbox): 
+Object {latitude: -31.420202381903614, longitude: -64.16673389481184, locationAddress: "Doctor Facundo Zuviría 1299, Córdoba, Córdoba, X5004, Argentina", locationName: "Doctor Facundo Zuviría 1299"}
+Ubicación reformateada para Google Maps: 
+Object {latitude: -31.420202381903614, longitude: -64.16673389481184, locationAddress: "Dr. Facundo Zuviría 1245, X5004GWG Córdoba, Argentina", locationName: "Dr. Facundo Zuviría 1245"}
+Recibiendo datos de ubicación en Home: 
+Object {latitude: -31.420202381903614, longitude: -64.16673389481184, locationAddress: "Dr. Facundo Zuviría 1245, X5004GWG Córdoba, Argentina", locationName: "Dr. Facundo Zuviría 1245"}
+Recibida ubicación inicial: 
+Object {latitude: -31.420202381903614, longitude: -64.16673389481184, locationName: "Dr. Facundo Zuviría 1245", locationAddress: "Dr. Facundo Zuviría 1245, X5004GWG Córdoba, Argentina"}
+As of February 21st, 2024, google.maps.Marker is deprecated. Please use google.maps.marker.AdvancedMarkerElement instead. At this time, google.maps.Marker is not scheduled to be discontinued, but google.maps.marker.AdvancedMarkerElement is recommended over google.maps.Marker. While google.maps.Marker will continue to receive bug fixes for any major regressions, existing bugs in google.maps.Marker will not be addressed. At least 12 months notice will be given before support is discontinued. Please see https://developers.google.com/maps/deprecations for additional details and https://developers.google.com/maps/documentation/javascript/advanced-markers/migration for the migration guide.
+InvalidValueError: setCenter: not a LatLng or LatLngLiteral with finite coordinates: in property lat: NaN is not an accepted value

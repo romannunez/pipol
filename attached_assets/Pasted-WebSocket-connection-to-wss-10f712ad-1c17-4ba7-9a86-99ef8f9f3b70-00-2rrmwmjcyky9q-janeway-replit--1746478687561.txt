@@ -1,0 +1,54 @@
+WebSocket connection to 'wss://10f712ad-1c17-4ba7-9a86-99ef8f9f3b70-00-2rrmwmjcyky9q.janeway.replit.dev/?token=0-W3B4gzqSFj' failed: 
+setupWebSocket @ client:536Understand this error
+client:536 Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'wss://localhost:undefined/?token=0-W3B4gzqSFj' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)Understand this error
+chunk-RPCDYKBN.js?v=6049dfaf:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+stripe.ts:5 Missing Stripe public key. Payment functionality will be limited.
+(anonymous) @ stripe.ts:5Understand this warning
+chat-service.ts:23 WebSocket connection established
+rl-cs.js:1 [Komodo]   CS Register csid_svt3ie_dcg1b8_2_6_1
+stripe.js:1 Uncaught (in promise) IntegrationError: Please call Stripe() with your publishable key. You used an empty string.
+    at l (stripe.js:1:163349)
+    at new e (stripe.js:1:535701)
+    at Vf (stripe.js:1:588545)
+    at initStripe2 (@stripe_stripe-js.js?v=6049dfaf:121:28)
+    at @stripe_stripe-js.js?v=6049dfaf:151:12Understand this error
+16contents.4683de87.js:1  param 『{"isTrusted":true}』 is not legal！
+/api/events:1 
+            
+            
+           Failed to load resource: the server responded with a status of 400 (Bad Request)Understand this error
+create-event-form.tsx:285 Error creating event: Error: 400: {"errors":[{"code":"invalid_type","expected":"date","received":"string","path":["date"],"message":"Expected date, received string"},{"code":"invalid_type","expected":"string","received":"number","path":["latitude"],"message":"Expected string, received number"},{"code":"invalid_type","expected":"string","received":"number","path":["longitude"],"message":"Expected string, received number"}]}
+    at throwIfResNotOk (queryClient.ts:6:11)
+    at async apiRequest (queryClient.ts:22:3)
+    at async onSubmit (create-event-form.tsx:270:19)
+    at async chunk-4BFJKWC4.js?v=6049dfaf:1465:9
+onSubmit @ create-event-form.tsx:285Understand this error
+/api/events:1 
+            
+            
+           Failed to load resource: the server responded with a status of 400 (Bad Request)Understand this error
+create-event-form.tsx:285 Error creating event: Error: 400: {"errors":[{"code":"invalid_type","expected":"date","received":"string","path":["date"],"message":"Expected date, received string"},{"code":"invalid_type","expected":"string","received":"number","path":["latitude"],"message":"Expected string, received number"},{"code":"invalid_type","expected":"string","received":"number","path":["longitude"],"message":"Expected string, received number"}]}
+    at throwIfResNotOk (queryClient.ts:6:11)
+    at async apiRequest (queryClient.ts:22:3)
+    at async onSubmit (create-event-form.tsx:270:19)
+    at async chunk-4BFJKWC4.js?v=6049dfaf:1465:9
+onSubmit @ create-event-form.tsx:285Understand this error
+/api/events:1 
+            
+            
+           Failed to load resource: the server responded with a status of 400 (Bad Request)Understand this error
+create-event-form.tsx:285 Error creating event: Error: 400: {"errors":[{"code":"invalid_type","expected":"date","received":"string","path":["date"],"message":"Expected date, received string"},{"code":"invalid_type","expected":"string","received":"number","path":["latitude"],"message":"Expected string, received number"},{"code":"invalid_type","expected":"string","received":"number","path":["longitude"],"message":"Expected string, received number"}]}
+    at throwIfResNotOk (queryClient.ts:6:11)
+    at async apiRequest (queryClient.ts:22:3)
+    at async onSubmit (create-event-form.tsx:270:19)
+    at async chunk-4BFJKWC4.js?v=6049dfaf:1465:9
+onSubmit @ create-event-form.tsx:285Understand this error
+
+                
+          
+          
+          
+         Chrome is moving towards a new experience that allows users to choose to browse without third-party cookies.Understand this warning

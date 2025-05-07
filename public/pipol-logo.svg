@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="512" height="512" rx="256" fill="black"/>
+    <circle cx="256" cy="256" r="200" fill="#FFCC00"/>
+    <path d="M168 200C168 178.909 184.909 162 206 162H306C327.091 162 344 178.909 344 200V272C344 293.091 327.091 310 306 310H206C184.909 310 168 293.091 168 272V200Z" fill="black"/>
+    <path d="M200 176C200 170.477 204.477 166 210 166H302C307.523 166 312 170.477 312 176V308C312 313.523 307.523 318 302 318H210C204.477 318 200 313.523 200 308V176Z" fill="#FFCC00"/>
+    <path d="M216 192C216 186.477 220.477 182 226 182H260C265.523 182 270 186.477 270 192V224C270 229.523 265.523 234 260 234H226C220.477 234 216 229.523 216 224V192Z" fill="black"/>
+    <circle cx="242" cy="268" r="24" fill="black"/>
+    <text x="256" y="400" font-family="Arial" font-size="64" font-weight="bold" text-anchor="middle" fill="white">PIPOL</text>
+</svg>

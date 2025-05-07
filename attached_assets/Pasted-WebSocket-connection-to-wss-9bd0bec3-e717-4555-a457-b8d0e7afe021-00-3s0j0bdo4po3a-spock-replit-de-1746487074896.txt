@@ -1,0 +1,347 @@
+WebSocket connection to 'wss://9bd0bec3-e717-4555-a457-b8d0e7afe021-00-3s0j0bdo4po3a.spock.replit.dev/?token=KL9FiY5R5q74' failed: 
+setupWebSocket @ client:536Understand this error
+        
+          
+      
+        
+        
+          
+            Explanation
+          
+          
+        
+        
+          
+                
+          
+          
+          
+        
+        
+      
+    
+          
+        
+          
+        
+      
+        
+          Code
+          
+      
+        
+                
+          
+          
+          
+        
+        
+      
+        
+        
+      
+        
+      
+    
+      
+      
+      
+        Use code snippets with caution
+      
+    
+    javascript
+  // Ensure the protocol is 'wss' for secure WebSocket connections
+  const protocol = "wss";   // Verify that the server side is also expecting the "vite-hmr" protocol
+  const socket2 = new WebSocket(
+    ${protocol}://${hostAndPath}?token=${wsToken},
+    "vite-hmr" 
+  );  let isOpened = false;
+  socket2.addEventListener(
+    "open",
+    () => {
+      isOpened = true;
+      notifyListeners("vite:ws:connect", { webSocket: socket2 });
+    },
+    { once: true }
+  );
+  socket2.addEventListener("message", async ({ data }) => {
+    handleMessage(JSON.parse(data));
+  });
+  socket2.addEventListener('error', (error) => {
+        // Add an error handler to potentially catch issues that aren't reported otherwise
+        console.error('WebSocket Error:', error);
+    });
+  socket2.addEventListener('close', (event) => {
+      // Add a close handler to catch when the connection is closed.
+      console.warn('WebSocket Connection Closed:', event);
+  });
+      
+        
+          Code
+          
+      
+        
+                
+          
+          
+          
+        
+        
+      
+        
+        
+      
+        
+      
+    
+      
+      
+      
+        Use code snippets with caution
+      
+    
+    
+      
+          
+          
+            
+              Sources and related content
+              
+              
+      
+      
+        
+          
+            
+              https://github.com/angular/angular-cli/issues/29915
+            
+          
+        
+          
+            
+              https://vite.dev/config/server-options
+            
+          
+        
+          
+            
+              https://apidog.com/blog/websocket-connection-failed/
+            
+          
+        
+      
+    
+            
+          
+          
+            Data used to understand this message
+            
+        
+            
+            Console message
+          
+            
+            Stacktrace
+          
+            
+            Related code
+          
+        
+      
+          
+          
+            
+          
+          
+          
+      Use search instead
+    
+        
+          
+        
+          
+        
+          
+      AI tools may generate inaccurate info that doesn't represent Google's views.
+      Data sent to Google may be seen by human reviewers to improve this feature.
+      Open settings
+      or
+      learn more
+    
+        
+        
+        
+          
+            
+                
+          
+          
+          
+        
+            
+                
+          
+          
+          
+        
+          
+          
+                
+          
+          
+          
+        
+        
+
+      
+        
+      
+client:536 Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'wss://localhost:undefined/?token=KL9FiY5R5q74' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)Understand this error
+        
+          
+      
+        
+        
+          
+            Explanation
+          
+          
+        
+        
+          
+                
+          
+          
+          
+        
+        
+      
+    
+          
+        
+          
+        Understanding the problemThe error message SyntaxError: Failed to construct 'WebSocket': The URL 'wss://localhost:undefined/?token=KL9FiY5R5q74' is invalid. indicates that the URL being used to establish a WebSocket connection is malformed. Specifically, the error highlights that localhost:undefined within the URL is not a valid host and port combination. This is because the port number is undefined which is not a valid part of the URL. This will cause the WebSocket constructor to throw a SyntaxError.The error occurs within the setupWebSocket function, which is called from the fallback function, and likely originates from within the WebSocket's event handlers, suggesting an issue when initially setting up the WebSocket connection.How to verifyInspect the setupWebSocket function: Navigate to line 536 of your client.js file, where the setupWebSocket function is located.Examine URL construction: Within setupWebSocket, examine how the WebSocket URL is being dynamically constructed. Look for any variables or parameters that contribute to the host and port section.Inspect the variables: Inspect any variables that are being used to define the port or host. Add a console.log(variableName) statement to check if the variable has the value you would expect.Suggested fixThe core issue is that the port number is resolving to undefined. The fix involves ensuring that the variable meant to represent the port number is correctly defined and has a valid value (e.g., 8080, 443, etc.) before the WebSocket URL is constructed. Here's a possible solution:
+      
+        
+          js
+          
+      
+        
+                
+          
+          
+          
+        
+        
+      
+        
+        
+      
+        function setupWebSocket(host, port, token) {  // Check if the port is undefined, if so throw an error.  if (port === undefined) {    throw new Error('Port is undefined');  }  // Add default port if it's missing.  const actualPort = port || 443;  const socketUrl = `wss://${host}:${actualPort}/?token=${token}`;  console.log("WebSocket URL:", socketUrl); // Check that the url is valid  // ... rest of your websocket code ...}// Example call to setupWebSocket// This will throw an errorsetupWebSocket("localhost", undefined, "KL9FiY5R5q74");// This will add a default port of 443setupWebSocket("localhost", undefined, "KL9FiY5R5q74");// This will use the given port of 8080setupWebSocket("localhost", 8080, "KL9FiY5R5q74");
+      
+    
+      
+      
+      
+        Use code snippets with caution
+      
+    
+    SummaryThe SyntaxError: Failed to construct 'WebSocket' error is triggered because the WebSocket URL includes an undefined port, which is invalid. This results from the incorrect handling of the port number in your setupWebSocket function. By verifying that the port number is a valid value and using it correctly when constructing the WebSocket URL, this issue can be resolved. In the provided solution an error is thrown if the port is undefined. And if no port is defined a default port of 443 is used.
+      
+          
+          
+            
+              Sources and related content
+              
+              
+      
+      
+        
+          
+            
+              https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/error_event
+            
+          
+        
+          
+            
+              https://bugs.webkit.org/show_bug.cgi?id=80616
+            
+          
+        
+      
+    
+            
+          
+          
+            Data used to understand this message
+            
+        
+            
+            Console message
+          
+        
+      
+          
+          
+            
+          
+          
+          
+      Use search instead
+    
+        
+          
+        
+          
+        
+          
+      AI tools may generate inaccurate info that doesn't represent Google's views.
+      Data sent to Google may be seen by human reviewers to improve this feature.
+      Open settings
+      or
+      learn more
+    
+        
+        
+        
+          
+            
+                
+          
+          
+          
+        
+            
+                
+          
+          
+          
+        
+          
+          
+                
+          
+          
+          
+        
+        
+
+      
+        
+      
+chunk-RPCDYKBN.js?v=caf80520:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+stripe.ts:5 Missing Stripe public key. Payment functionality will be limited.
+(anonymous) @ stripe.ts:5Understand this warning
+chat-service.ts:23 WebSocket connection established
+rl-cs.js:1 [Komodo]   CS Register csid_svt9z1_2tb7te_2_6_1
+stripe.js:1 Uncaught (in promise) IntegrationError: Please call Stripe() with your publishable key. You used an empty string.
+    at l (stripe.js:1:163349)
+    at new e (stripe.js:1:535701)
+    at Vf (stripe.js:1:588545)
+    at initStripe2 (@stripe_stripe-js.js?v=caf80520:121:28)
+    at @stripe_stripe-js.js?v=caf80520:151:12Understand this error
+16contents.4683de87.js:1  param 『{"isTrusted":true}』 is not legal！

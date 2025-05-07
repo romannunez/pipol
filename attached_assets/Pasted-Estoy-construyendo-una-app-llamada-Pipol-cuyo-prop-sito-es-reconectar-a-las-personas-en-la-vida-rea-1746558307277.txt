@@ -1,0 +1,120 @@
+Estoy construyendo una app llamada Pipol, cuyo propósito es reconectar a las personas en la vida real a través de eventos presenciales creados por usuarios, utilizando un mapa interactivo como interfaz principal (como Uber o Pokémon Go).
+
+🌍 Propósito:
+Fomentar que las personas vivan experiencias reales y sociales, encontrando personas similares cerca, y asistiendo a eventos creados por la comunidad.
+
+🧱 Quiero que la app funcione tanto en:
+Móviles (Android + iOS) usando React Native + Expo
+
+Web usando React Native Web
+
+Todo el código debe estar organizado en una sola base (monorepo tipo Expo-managed workflow), con navegación adaptada para mobile/web (ej. react-navigation con @react-navigation/native-stack + react-native-web).
+
+🎯 Funcionalidades principales:
+1. Mapa interactivo:
+Se ve el mapa con:
+
+Ubicación del usuario
+
+Eventos marcados como pines
+
+Interacciones:
+
+Tap en pin: muestra detalles del evento
+
+Tap largo en mapa: abre formulario para crear nuevo evento en esa ubicación
+
+Filtros (categoría, distancia, fecha)
+
+2. Usuarios (participantes):
+Registro e inicio de sesión con Supabase Auth
+
+Ver eventos cercanos en el mapa
+
+Ver detalles del evento (nombre, descripción, fecha, lugar, organizador, precio)
+
+Unirse a eventos (gratis o pagos con Stripe)
+
+Ver lista de “Mis eventos” asistidos
+
+3. Creadores de eventos:
+Crear evento desde el mapa o desde botón flotante
+
+Formulario incluye:
+
+Nombre
+
+Descripción
+
+Categoría
+
+Fecha y hora
+
+Precio (0 = gratis)
+
+Ubicación (geolocalización)
+
+Ver lista de eventos creados
+
+Editar/eliminar eventos propios
+
+💳 Pagos (Stripe):
+Eventos pueden tener precio > 0
+
+Si es pago:
+
+Se redirige a Stripe Checkout
+
+Al pagar se registra al usuario como asistente
+
+Si es gratis:
+
+Directamente se registra al usuario
+
+🗃️ Base de Datos (Supabase):
+Tabla: users
+id, email, name, created_at
+
+Tabla: events
+id, title, description, category, price
+
+date_time, latitude, longitude
+
+created_by (FK a users)
+
+Tabla: event_participants
+id, user_id, event_id, payment_status, joined_at
+
+⚙️ Requisitos técnicos:
+Expo-managed React Native project
+
+react-native-maps (compatible con Expo) para el mapa
+
+expo-location para ubicación del usuario
+
+Supabase para auth y base de datos
+
+Stripe para pagos
+
+UI optimizada para móviles, pero usable en web (con react-native-web)
+
+Componentes separados (EventCard, MapView, EventForm, UserProfile, etc.)
+
+Navegación con react-navigation (stack y bottom tabs)
+
+📲 Flujos principales:
+Usuario:
+Abrir app → Mapa
+
+Ver eventos en mapa → Tap para ver detalles → Unirse (pago o gratis)
+
+Ver lista de eventos asistidos
+
+Creador:
+Tap en mapa o botón “+”
+
+Crear evento → Confirmar → Aparece en mapa
+
+Ver y gestionar eventos creados
+
+Por favor, crea esta app usando la estructura recomendada de Expo para poder exportarla más tarde como APK o IPA. Asegúrate de que el código sea modular, que funcione en dispositivos móviles y también en web, y que esté preparado para integrarse con Supabase y Stripe.

@@ -1,0 +1,70 @@
+Quiero que me ayudes a construir una aplicación móvil llamada **Pipol** usando React Native (o cualquier stack moderno que permita desarrollo web y móvil).
+
+### Objetivo de la app:
+Pipol es una app social que permite a las personas **descubrir y crear eventos reales** en un mapa, para fomentar conexiones cara a cara entre personas con intereses similares. La interfaz principal es un **mapa interactivo** (como Uber o Pokémon GO) donde los usuarios pueden encontrar eventos cercanos o crear los suyos.
+
+---
+
+### FUNCIONALIDADES PRINCIPALES:
+
+🔍 **1. Home / Mapa de eventos**
+- Mostrar un mapa con pins que representan eventos.
+- Cada pin incluye información básica: título del evento, categoría, fecha/hora.
+- Al hacer clic en un pin, mostrar una card emergente con más información y botón para unirse.
+- Filtro por categoría (ej: social, música, espiritual, etc.)
+- Barra de búsqueda para buscar eventos o ubicaciones.
+- Botón flotante "+" para crear evento.
+
+➕ **2. Crear evento**
+- Al hacer clic en "+", el usuario selecciona una ubicación en el mapa.
+- Luego llena un formulario con:
+  - Nombre del evento
+  - Descripción
+  - Categoría
+  - Fecha y hora
+  - ¿Evento gratuito o de pago?
+    - Si es de pago, ingresar precio y procesar pago con Stripe o PayPal.
+  - Cupo máximo (opcional)
+  - Tipo de privacidad: público o privado
+
+🧾 **3. Sistema de entradas**
+- Si el evento es de pago:
+  - El usuario debe pagar para unirse (Stripe preferido)
+  - El pago confirma automáticamente su asistencia
+  - El organizador puede ver cuántas entradas ha vendido
+- Panel básico para ver historial de pagos por evento
+
+👤 **4. Perfil de usuario**
+- Nombre, foto, descripción breve
+- Lista de eventos creados
+- Lista de eventos a los que ha asistido
+- Intereses del usuario (para futuras recomendaciones)
+
+🔐 **5. Registro y login**
+- Autenticación con email y contraseña
+- Opción de iniciar sesión con Google (opcional)
+
+⚠️ **6. Seguridad**
+- Opción para reportar usuarios o eventos
+- Eventos privados no muestran ubicación exacta hasta confirmar asistencia
+- Solo usuarios confirmados pueden ver la lista de asistentes o usar el chat (si está activado)
+
+---
+
+### BACKEND:
+- Base de datos en Firebase o Supabase para usuarios y eventos
+- Geolocalización en tiempo real
+- API para registrar pagos y validar asistentes
+
+---
+
+### MVP ENFOCADO EN:
+- Map view + exploración de eventos
+- Creación de eventos
+- Unirse a eventos (gratis o pagos)
+- Procesar pagos básicos con Stripe
+- Registro/login
+
+---
+
+Ayúdame a construir esta app paso a paso. Empecemos por el diseño de la base de datos y la arquitectura general del proyecto.
